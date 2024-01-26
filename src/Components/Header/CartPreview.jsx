@@ -1,0 +1,1 @@
+// A small window with a scrollable list of cart items, and buttons to go to cart or checkotu
