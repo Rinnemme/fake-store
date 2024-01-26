@@ -1,2 +1,1 @@
-# fake-store
-A mock storefront SPA built using react router.
+A fake storefront using react router
