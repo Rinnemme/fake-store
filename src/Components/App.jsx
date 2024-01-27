@@ -15,11 +15,11 @@ function App() {
 
   async function fetchItems() {
     try {
-      await fetch('https://api.escuelajs.co/api/v1/products')
+      await fetch('https://dummyjson.com/products', {mode: 'cors'})
       .then(result=>result.json())
       .then(json=> {
-        // console.log(json)
-        setShopItems(json)
+        console.log(json.products)
+        setShopItems(json.products)
       })
     }
     catch (err) {console.log(err)}
