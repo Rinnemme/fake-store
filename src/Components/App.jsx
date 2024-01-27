@@ -1,7 +1,7 @@
 // import { useState } from 'react'
 import { createContext, useEffect, useState } from 'react'
 // import { Router } from 'react-router'
-import Store from './Store/Store.jsx'
+import Router from './Router.jsx'
 
 const StoreContext = createContext({
   cartItems: [],
@@ -36,8 +36,7 @@ function App() {
         shopItems: ShopItems,
         updateCart: setCartItems,
       }}>
-        <div>Placeholder</div>
-        <Store />
+        <Router />
       </StoreContext.Provider>
     </>
   )
