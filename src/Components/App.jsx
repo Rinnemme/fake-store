@@ -1,6 +1,4 @@
-// import { useState } from 'react'
 import { createContext, useEffect, useState } from 'react'
-// import { Router } from 'react-router'
 import Router from './Router.jsx'
 
 const StoreContext = createContext({
@@ -17,10 +15,7 @@ function App() {
     try {
       await fetch('https://dummyjson.com/products', {mode: 'cors'})
       .then(result=>result.json())
-      .then(json=> {
-        console.log(json.products)
-        setShopItems(json.products)
-      })
+      .then(json=>setShopItems(json.products))
     }
     catch (err) {console.log(err)}
   }
