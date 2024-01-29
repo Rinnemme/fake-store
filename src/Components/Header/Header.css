@@ -32,6 +32,7 @@
     background-color:#f8f8f8;
     border-radius:3px;
     font-size:1.1em;
+    box-shadow:0px 0px 5px 0px lightgray;
 }
 
 #menu>*:hover {
@@ -41,9 +42,10 @@
 
 #menu-container {
     position:absolute;
-    display:flex;
     top:0;
     left:0;
+    padding-right:40px;
+    padding-bottom:40px;
 }
 
 #menu>* {
@@ -51,3 +53,111 @@
     color:#3BA99C;
     padding:8px;
 }
+
+#cart-container {
+    position:absolute;
+    top:0;
+    right:0;
+    padding-left:40px;
+    padding-bottom:40px;
+}
+
+#cart-preview {
+    position:relative;
+    margin-top:68px;
+    margin-right:8px;
+    display:flex;
+    flex-direction:column;
+    box-shadow:0px 0px 5px 0px lightgray;
+    border-radius:3px;
+}
+
+#mini-cart-banner {
+    text-align:center;
+    background-color:#EFEFEF;
+    padding:10px;
+    border-radius: 3px 3px 0px 0px;
+}
+
+#mini-cart {
+    padding:10px;
+    background-color:white;
+}
+
+.mini-cart-item {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:5px;
+}
+
+.mini-cart-item>img {
+    width:35px; 
+    padding-right:10px;
+}
+
+.mini-cart-item-name {
+    text-align:left;
+    width:100%;
+}
+
+.mini-cart-item-total {
+    justify-self: flex-end;
+    padding-left:30px;
+}
+
+#mini-cart-total {
+    display:flex;
+    justify-content:space-between;
+    background-color: #69D1C5;
+    padding:10px;
+    font-weight:bold;
+}
+
+#mini-cart-buttons {
+    display:flex;
+}
+
+#mini-cart-buttons>*>button {
+    padding:12px;
+    border:none;
+    width:100%;
+    height:100%;
+    color:#333333;
+}
+
+#mini-cart-buttons>a {
+    width:50%;
+    height:100%;
+}
+
+#left-mini-cart-button {
+    background-color: #FFD899;
+    border-radius: 0 0 0 3px;
+}
+
+#left-mini-cart-button:hover {
+    background-color: #f3c884;
+    transition: 0.3s;
+}
+
+#right-mini-cart-button {
+    background-color:#FF7D95;
+    border-radius: 0 0 3px 0;
+}
+
+#right-mini-cart-button:hover {
+    background-color:#ef667f;
+    transition: 0.3s;
+}
+
+/* <div id="cart-preview">
+                    <div id="mini-cart">
+                        {cartItems.map(item=>{
+                            return (
+                                <div class="mini-cart-item">
+                                    <img src={item.thumbnail}/>
+                                    <div class="mini-cart-item-name">{`${item.name}`}</div>
+                                    <div class="mini-cart-item-qty">{`${item.quantity}`}</div>
+                                    <div class="mini-cart-item-total">{`${item.price * item.quantity}`}</div>
+                                </div> */
