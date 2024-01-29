@@ -1,0 +1,53 @@
+#store-header {
+    position:relative;
+    width:100%;
+    height:60px;
+    background-color:#69D1C5;
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+    /* padding:8px 12px 8px 12px; */
+}
+
+#store-header>img {
+    height:45%;
+    padding:15px;
+}
+
+#store-header>img:hover {
+    cursor:pointer;
+}
+
+#store-header>#logo {
+    height:70%;
+}
+
+#menu {
+    display:flex;
+    flex-direction:column;
+    padding:15px;
+    position:relative;
+    margin-top:68px;
+    margin-left:8px;
+    background-color:#f8f8f8;
+    border-radius:3px;
+    font-size:1.1em;
+}
+
+#menu>*:hover {
+    cursor:pointer;
+    color:#F6CA83;
+}
+
+#menu-container {
+    position:absolute;
+    display:flex;
+    top:0;
+    left:0;
+}
+
+#menu>* {
+    text-decoration: none;
+    color:#3BA99C;
+    padding:8px;
+}
