@@ -16,7 +16,6 @@ export default function Router() {
 
     return (
         <>
-            <Header />
             <RouterProvider router ={router} />
         </>
     )

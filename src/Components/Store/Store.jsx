@@ -2,6 +2,7 @@
 
 import {useContext, useState} from 'react'
 import {StoreContext} from '../App.jsx'
+import Header from '../Header/Header.jsx'
 
 function Store() {
     const context = useContext(StoreContext)
@@ -13,6 +14,7 @@ function Store() {
 
     return (
         <>
+            <Header />
             {cartItems.map(item => {
                 return <div key={item.id}>{`${item.title}`}</div>
             })}
