@@ -15,10 +15,10 @@ export default function HamburgerMenu() {
             <img src={MenuLogo} onClick={() => toggleMenuVisibility()}/>
             {MenuVisible && <div id="menu-container" onMouseLeave={() => setMenuVisible(false)}>
                     <div id="menu">
-                        <Link to='/cart'>Cart</Link>
-                        <Link to='/checkout'>Checkout</Link>
                         <Link to='/'>Home</Link>
                         <Link to='/store'>Store</Link>
+                        <Link to='/cart'>Cart</Link>
+                        <Link to='/checkout'>Checkout</Link>
                     </div>
                 </div>}
          </>
