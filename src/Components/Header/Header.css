@@ -2,11 +2,13 @@
     position:relative;
     width:100%;
     height:60px;
-    background-color:#69D1C5;
+    background-color: white;
+    box-shadow: 5px 0px 10px 0px;
     display:flex;
     justify-content: space-between;
     align-items:center;
-    /* padding:8px 12px 8px 12px; */
+    position:sticky;
+    top:0;
 }
 
 #store-header>img {
