@@ -16,13 +16,18 @@
 }
 
 .store-section-header {
-    font-size:1.6em;
+    font-size:1.8em;
     letter-spacing:2px;
     font-weight:lighter;
     text-align:center;
+    font-weight:bold;
     padding:20px;
-    color:#9f9f9f;
+    color:#21897E;
     width:100%;
+    border-top:1px solid #69D1C5;
+    border-bottom:1px solid #69D1C5;
+    background-color: #86e8dc;
+    margin-bottom:30px;
 }
 
 .store-section {
