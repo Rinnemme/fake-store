@@ -8,9 +8,8 @@ import './Store.css'
 function Store() {
     const context = useContext(StoreContext)
     const shopItems = context.shopItems
-    // const cartItems = context.cartItems
-    // const updateCart = context.updateCart
-    // const [Count, setCount] = useState(0)
+    const cartItems = context.cartItems
+    const updateCart = context.updateCart
     let categories = []
     shopItems.forEach(item => {
         if(!categories.includes(item.category)) {
@@ -22,17 +21,23 @@ function Store() {
         return string.slice(0,1).toUpperCase()+string.slice(1)
     }
 
+    function addToCart(item) {
+        item.quantity = document.getElementById(`${item.title}-input`).value
+        if (!cartItems.find(match=>match.title===item.title)) {
+            updateCart([...cartItems, {...item}])
+        }
+        else {
+            const newCart = []
+            cartItems.forEach(item => newCart.push({...item}))
+            const itemInCart = newCart.find(match=>match.title===item.title)
+            itemInCart.quantity = +itemInCart.quantity + +item.quantity
+            updateCart(newCart)
+        }
+    }
+
     return (
         <>
             <Header />
-            {/* {cartItems.map(item => {
-                return <div key={item.id}>{`${item.title}`}</div>
-            })}
-            <button onClick={() => {
-                    cartItems.push({...shopItems[Count], quantity:1})
-                    setCount(Count+1)
-                    updateCart([...cartItems])
-                }}>Add thing to cart</button> */}
             <div id="store-container">
                 <div id="store-sidebar">
                     <div id="store-sidebar-content">
@@ -44,7 +49,8 @@ function Store() {
                 </div>
                 <div id="store-main">
                     {categories.map(category => {
-                        const categoryItems = shopItems.filter(item=>item.category===category)
+                        const categoryItems = []
+                        shopItems.forEach(item=>{if(item.category===category) categoryItems.push({...item})})
                         return (
                             <div className="store-section-container" key={`${category}`}>
                                 <div className="store-section-header" id={category}>{`${capitalize(category)}`}</div>
@@ -58,8 +64,8 @@ function Store() {
                                                     <p>{`${item.description}`}</p>
                                                     <div className="add-to-cart-section">
                                                         <div>Quantity:</div>
-                                                        <input type="number" max="5" min="1" defaultValue="1"></input>
-                                                        <button>Add to Cart</button>
+                                                        <input id={`${item.title}-input`} type="number" max="5" min="1" defaultValue="1"></input>
+                                                        <button onClick={() => addToCart(item)}>Add to Cart</button>
                                                     </div>
                                                 </div>
                                             </div>
