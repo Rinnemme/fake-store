@@ -1,3 +1,7 @@
+*{
+  box-sizing:border-box;
+}
+
 *:hover {
   cursor:default;
 }
@@ -5,9 +9,10 @@
 body {
   background-color:white;
   display:flex;
+  flex-direction:column;
   margin: 0px;
+  padding: 0px;
   min-height:100vh;
-  width:100vw;
   box-sizing:border-box;
   font-family: sans-serif;
   font-weight:200;
@@ -19,7 +24,8 @@ body {
   display:flex;
   flex-direction:column;
   min-height:100vh;
-  width:100%;
+  width:100vw;
+  box-sizing:border-box;
 }
 
 button:hover, button>*:hover {

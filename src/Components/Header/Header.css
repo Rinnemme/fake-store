@@ -9,11 +9,13 @@
     align-items:center;
     position:sticky;
     top:0;
+    z-index:2;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 #store-header>img {
     height:45%;
-    padding:15px;
 }
 
 #store-header>img:hover {

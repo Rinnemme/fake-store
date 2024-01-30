@@ -18,6 +18,10 @@ function Store() {
         }
     })
 
+    function capitalize(string) {
+        return string.slice(0,1).toUpperCase()+string.slice(1)
+    }
+
     return (
         <>
             <Header />
@@ -30,13 +34,20 @@ function Store() {
                     updateCart([...cartItems])
                 }}>Add thing to cart</button> */}
             <div id="store-container">
-                <div id="store-sidebar"></div>
+                <div id="store-sidebar">
+                    <div id="store-sidebar-content">
+                        <h2>Categories</h2>
+                        {categories.map(category => {
+                            return (<h3 key={category}><a href={`#${category}`}>{`${capitalize(category)}`}</a></h3>)
+                        })}
+                    </div>
+                </div>
                 <div id="store-main">
                     {categories.map(category => {
                         const categoryItems = shopItems.filter(item=>item.category===category)
                         return (
                             <div className="store-section-container" key={`${category}`}>
-                                <div className="store-section-header">{`${category.toUpperCase()}`}</div>
+                                <div className="store-section-header" id={category}>{`${capitalize(category)}`}</div>
                                 <div className="store-section">
                                     {categoryItems.map(item => {
                                         return (
@@ -47,7 +58,7 @@ function Store() {
                                                     <p>{`${item.description}`}</p>
                                                     <div className="add-to-cart-section">
                                                         <div>Quantity:</div>
-                                                        <input type="number" max="5" defaultValue="1"></input>
+                                                        <input type="number" max="5" min="1" defaultValue="1"></input>
                                                         <button>Add to Cart</button>
                                                     </div>
                                                 </div>
