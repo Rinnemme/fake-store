@@ -7,9 +7,16 @@ const StoreContext = createContext({
   updateCart: () => {},
 })
 
+const loadedCart = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : []
+
 function App() {
-  const [CartItems, setCartItems] = useState([])
+  const [CartItems, setCartItems] = useState(loadedCart)
   const [ShopItems, setShopItems] = useState([])
+
+  function updateCart(cart) {
+    setCartItems(cart)
+    localStorage.setItem('cart', JSON.stringify(cart))
+  }
 
   async function fetchItems() {
     try {
@@ -29,7 +36,7 @@ function App() {
       <StoreContext.Provider value = {{
         cartItems: CartItems,
         shopItems: ShopItems,
-        updateCart: setCartItems,
+        updateCart: updateCart,
       }}>
         <Router />
       </StoreContext.Provider>
