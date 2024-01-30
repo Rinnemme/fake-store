@@ -16,6 +16,7 @@
 
 #store-header>img {
     height:45%;
+    z-index:2;
 }
 
 #store-header>img:hover {
