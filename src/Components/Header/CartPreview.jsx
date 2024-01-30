@@ -14,17 +14,17 @@ export default function CartPreview() {
     return (
         <>
             <img src={CartLogo} onClick={() => setCartVisible(true)}/>
-            {CartVisible && <div id="cart-container" onMouseLeave={() => setCartVisible(false)}>
+            {CartVisible && <div id="cart-preview-container" onMouseLeave={() => setCartVisible(false)}>
                 <div id="cart-preview">
                     <div id="mini-cart-banner">In Your Cart:</div>
                     <div id="mini-cart">
                         {cartItems.length===0 && <div><em>There are no items in your cart.</em></div>}
                         {cartItems.map(item=>{
                             return (
-                                <div class="mini-cart-item">
+                                <div className="mini-cart-item">
                                     <img src={item.thumbnail}/>
-                                    <div class="mini-cart-item-name">{`${item.title} (${item.quantity})`}</div>
-                                    <div class="mini-cart-item-total">{`$${item.price * item.quantity}`}</div>
+                                    <div className="mini-cart-item-name">{`${item.title} (${item.quantity})`}</div>
+                                    <div className="mini-cart-item-total">{`$${item.price * item.quantity}`}</div>
                                 </div>
                             )
                         })}
