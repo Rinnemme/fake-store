@@ -3,7 +3,7 @@ import Header from '../Header/Header.jsx'
 import { useContext } from 'react'
 import { StoreContext } from '../App.jsx'
 import { useState } from 'react'
-import './checkout.css'
+import './Checkout.css'
 
 export default function Checkout() {
     if(!window.location.href.includes('checkout')) window.scrollTo(0, 0)
