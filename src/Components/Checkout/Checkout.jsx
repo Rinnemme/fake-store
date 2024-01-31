@@ -86,6 +86,10 @@ export default function Checkout() {
                                 )
                             })}
                         </div>
+                        <div id="cart-review-total">
+                            <div>Total:</div>
+                            <div>{`$${cartTotal}`}</div>
+                        </div>
                     </div>
                     <div id="submit-button-container">
                         <button type="submit">Pay Now</button>
