@@ -7,10 +7,17 @@ import './Store.css'
 
 function Store() {
     if(!window.location.href.includes('store')) window.scrollTo(0, 0)
+    const[ShowModal, setShowModal] = useState(false)
     const context = useContext(StoreContext)
     const shopItems = context.shopItems
     const cartItems = context.cartItems
     const updateCart = context.updateCart
+
+    function toggleModal() {
+        const newState = ShowModal === true ? false : true
+        setShowModal(newState)
+    }
+
     let categories = []
     shopItems.forEach(item => {
         if(!categories.includes(item.category)) {
@@ -31,14 +38,27 @@ function Store() {
             const newCart = []
             cartItems.forEach(item => newCart.push({...item}))
             const itemInCart = newCart.find(match=>match.title===item.title)
-            itemInCart.quantity = +itemInCart.quantity + +item.quantity
-            updateCart(newCart)
+            if (+itemInCart.quantity + +item.quantity > 5) {
+                toggleModal()
+            } else {
+                itemInCart.quantity = +itemInCart.quantity + +item.quantity
+                updateCart(newCart)
+            }
         }
     }
 
     return (
         <>
             <Header />
+            {ShowModal && <>
+                <div id="modal">
+                    <div id="modal-message">
+                        <p>Uh oh, you can't add more than 5 of the same item to your cart! It's 
+                            just a matter of our limited stock.</p>
+                        <button onClick={() => toggleModal()}>OK</button>
+                    </div>
+                </div>
+            </>}
             <div id="store-container">
                 <div id="store-sidebar">
                     <div id="store-sidebar-content">
