@@ -2,24 +2,40 @@
 import Header from '../Header/Header.jsx'
 import { useContext } from 'react'
 import { StoreContext } from '../App.jsx'
-import { Link } from 'react-router-dom'
-import CloseImg from '../../assets/close.svg'
+import { useState } from 'react'
 import './checkout.css'
 
 export default function Checkout() {
-    window.scrollTo(0, 0)
+    if(!window.location.href.includes('checkout')) window.scrollTo(0, 0)
+
+    const [ShowModal, setShowModal] = useState(false)
+
+    function toggleModal() {
+        const newstate = ShowModal === false ? true : false
+        setShowModal(newstate)
+    }
+
     const context = useContext(StoreContext)
     const cartItems = context.cartItems
+
     let cartTotal = 0
     cartItems.forEach(item => cartTotal+=(item.price * item.quantity))
     const submitPayment = (e) => {
             e.preventDefault();
-            alert("Sike! This isn't a real payment form.");
+            toggleModal();
          }
 
     return (
         <>
             <Header />
+            {ShowModal && <>
+                <div id="modal">
+                    <div id="modal-message">
+                        <p>Sike, this isn't a real payment form!</p>
+                        <button onClick={() => toggleModal()}>OK</button>
+                    </div>
+                </div>
+            </>}
             <div id="checkout-container">
                 <form onSubmit={submitPayment}>
                     <div className="checkout-block">
