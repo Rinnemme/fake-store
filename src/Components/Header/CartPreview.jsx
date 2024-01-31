@@ -11,6 +11,8 @@ export default function CartPreview() {
     const [CartVisible, setCartVisible] = useState(false)
     let cartTotal = 0
     cartItems.forEach(item => cartTotal = cartTotal+(item.price * item.quantity))
+    let cartLength = 0
+    cartItems.forEach(item => cartLength = cartLength + +item.quantity)
 
     function toggleCartVisibility() {
         if (CartVisible === false) setCartVisible(true)
@@ -20,6 +22,7 @@ export default function CartPreview() {
     return (
         <>
             <img src={CartLogo} onClick={() => toggleCartVisibility()}/>
+            {cartItems.length>0 && <div id="cart-counter">{`${cartLength}`}</div>}
             {CartVisible && <div id="cart-preview-container" onMouseLeave={() => setCartVisible(false)}>
                 <div id="cart-preview">
                     <div id="mini-cart-banner">In Your Cart:</div>

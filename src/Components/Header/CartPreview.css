@@ -1,3 +1,14 @@
+#cart-counter {
+    position:absolute;
+    right:50px;
+    top:8px;
+    background-color:#FFD899;
+    color: #53370b;
+    font-size:0.8em;
+    padding:4px 6px 4px 6px;
+    border-radius:4px;
+}
+
 #cart-preview-container {
     position:absolute;
     top:0;
@@ -12,7 +23,7 @@
     margin-right:18px;
     display:flex;
     flex-direction:column;
-    box-shadow:0px 0px 5px 0px lightgray;
+    box-shadow:0px 0px 5px 0px gray;
     border-radius:3px;
 }
 
