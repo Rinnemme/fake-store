@@ -29,7 +29,8 @@
     align-items:center;
     padding: 10px 30px 10px 30px;
     border-radius: 10px 10px 0 0;
-    background-color:#86e8dc;;
+    background-color:#86e8dc;
+    color: #0f4f47;
 }
 
 .checkout-block>.form-section {
@@ -74,9 +75,11 @@
     font-size:0.9em;
     border-radius:4px;
     background-color:#FFD899;
+    color:#53370b;
 }
 
 #submit-button-container>button:hover {
     background-color:#FF7D95;
+    color: #541420;
     transition:0.3s;
 }
