@@ -13,25 +13,41 @@
     flex-direction:column;
     margin-bottom:100px;
     background-color:#f7f7f7;
-    border-radius:10px;
+    border-radius:4px;
 }
 
 #cart-header {
     display:flex;
+    font-weight:bold;
+    height:70px;
     font-size:1.1em;
     flex-direction:row;
     justify-content:space-between;
     align-items:center;
     padding: 10px 30px 10px 30px;
-    border-radius: 10px 10px 0 0;
-    background-color:#86e8dc;;
+    border-radius: 4px 4px 0 0;
+    background-color:#86e8dc;
+    color:#0f4f47;
 }
+
+commit -m "style cart header & buttons to be a bit more colorful and use the same principle of color being a darker iteration of backgrou
+nd-color" 
 
 #cart-total {
     display:flex;
     font-weight:400;
     align-items:center;
-    gap:10px;
+}
+
+#cart-total>*>button {
+    background-color:#FFD899;
+    color:#53370b;
+    margin-left:10px;
+}
+
+#cart-total>*>button:hover {
+    background-color:#69D1C5;
+    color: #0f4f47;
 }
 
 #cart-contents {

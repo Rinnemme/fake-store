@@ -2,7 +2,7 @@
 
 import Header from '../Header/Header.jsx'
 import './cart.css'
-import { useState, useContext } from 'react'
+import { useContext } from 'react'
 import { StoreContext } from '../App.jsx'
 import { Link } from 'react-router-dom'
 import CloseImg from '../../assets/close.svg'
@@ -12,7 +12,6 @@ export default function Cart() {
     const cartItems = context.cartItems
     const updateCart = context.updateCart
     let cartTotal = 0
-
     cartItems.forEach(item => cartTotal+=(item.price * item.quantity))
 
     function updateQuantity(item) {
