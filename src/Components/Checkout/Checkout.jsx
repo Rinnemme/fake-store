@@ -9,21 +9,20 @@ export default function Checkout() {
     if(!window.location.href.includes('checkout')) window.scrollTo(0, 0)
 
     const [ShowModal, setShowModal] = useState(false)
+    const context = useContext(StoreContext)
+    const cartItems = context.cartItems
 
     function toggleModal() {
         const newstate = ShowModal === false ? true : false
         setShowModal(newstate)
     }
 
-    const context = useContext(StoreContext)
-    const cartItems = context.cartItems
-
     let cartTotal = 0
     cartItems.forEach(item => cartTotal+=(item.price * item.quantity))
     const submitPayment = (e) => {
-            e.preventDefault();
-            toggleModal();
-         }
+        e.preventDefault();
+        toggleModal();
+    }
 
     return (
         <>

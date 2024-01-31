@@ -6,10 +6,12 @@ import { Link } from 'react-router-dom'
 
 export default function HamburgerMenu() {
     const [MenuVisible, setMenuVisible] = useState(false)
+
     function toggleMenuVisibility() {
         if (MenuVisible === false) setMenuVisible(true)
         else setMenuVisible(false)
     }
+    
     return (
         <>
             <img src={MenuLogo} onClick={() => toggleMenuVisibility()}/>

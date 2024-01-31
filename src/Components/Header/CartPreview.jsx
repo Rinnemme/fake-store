@@ -6,11 +6,13 @@ import { StoreContext } from '../App.jsx'
 import { Link } from 'react-router-dom'
 
 export default function CartPreview() {
+    const [CartVisible, setCartVisible] = useState(false)
     const context = useContext(StoreContext)
     const cartItems = context.cartItems
-    const [CartVisible, setCartVisible] = useState(false)
+    
     let cartTotal = 0
     cartItems.forEach(item => cartTotal = cartTotal+(item.price * item.quantity))
+    
     let cartLength = 0
     cartItems.forEach(item => cartLength = cartLength + +item.quantity)
 
