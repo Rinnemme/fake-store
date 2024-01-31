@@ -14,15 +14,17 @@
     padding-right: 15px;
 }
 
-#store-header>img {
+#store-header>img,
+#logo {
     height:45%;
     z-index:2;
 }
 
-#store-header>img:hover {
+#store-header>img:hover,
+#logo:hover {
     cursor:pointer;
 }
 
-#store-header>#logo {
-    height:70%;
+#store-header>*>#logo {
+    height:40px;
 }
