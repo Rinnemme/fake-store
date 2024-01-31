@@ -1,5 +1,6 @@
 import { createContext, useEffect, useState } from 'react'
 import Router from './Router.jsx'
+import { defaultCart } from './DefaultCart.jsx'
 
 const StoreContext = createContext({
   cartItems: [],
@@ -7,7 +8,7 @@ const StoreContext = createContext({
   updateCart: () => {},
 })
 
-const loadedCart = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : []
+const loadedCart = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : defaultCart
 
 function App() {
   const [CartItems, setCartItems] = useState(loadedCart)
