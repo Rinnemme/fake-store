@@ -1,5 +1,3 @@
-// A small window with a scrollable list of cart items, and buttons to go to cart or checkotu
-
 import CartLogo from '../../assets/cart.png'
 import { useState, useContext } from 'react'
 import { StoreContext } from '../App.jsx'

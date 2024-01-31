@@ -1,5 +1,3 @@
-// No context needed, just a page with links to shop headers
-
 import Header from '../Header/Header.jsx'
 import { Link } from 'react-router-dom'
 import Logo from '../../assets/banner-logo.svg'

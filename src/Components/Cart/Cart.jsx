@@ -1,11 +1,9 @@
-// list of cart items with remove item buttons, maybe quantity ajdustment
-
 import Header from '../Header/Header.jsx'
-import './cart.css'
 import { useContext } from 'react'
 import { StoreContext } from '../App.jsx'
 import { Link } from 'react-router-dom'
 import CloseImg from '../../assets/close.svg'
+import './Cart.css'
 
 export default function Cart() {
     if(!window.location.href.includes('cart')) window.scrollTo(0, 0)

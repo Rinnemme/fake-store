@@ -1,5 +1,3 @@
-// Just a set of links to home, shop, cart
-
 import { useState } from 'react'
 import MenuLogo from '../../assets/hamburger.png'
 import { Link } from 'react-router-dom'
@@ -11,7 +9,7 @@ export default function HamburgerMenu() {
         if (MenuVisible === false) setMenuVisible(true)
         else setMenuVisible(false)
     }
-    
+
     return (
         <>
             <img src={MenuLogo} onClick={() => toggleMenuVisibility()}/>

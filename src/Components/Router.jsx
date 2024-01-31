@@ -3,7 +3,6 @@ import Cart from './Cart/Cart.jsx'
 import Checkout from './Checkout/Checkout.jsx'
 import Home from './Home/Home.jsx'
 import Store from './Store/Store.jsx'
-import Header from './Header/Header.jsx'
 import ErrorPage from './ErrorPage.jsx'
 
 export default function Router() {

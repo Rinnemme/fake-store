@@ -1,4 +1,3 @@
-// just a form with payment info, a cart review, and a pay now button
 import Header from '../Header/Header.jsx'
 import { useContext } from 'react'
 import { StoreContext } from '../App.jsx'

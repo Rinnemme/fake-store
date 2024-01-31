@@ -1,5 +1,3 @@
-// rendered list of items with headings by category from the return array
-
 import {useContext, useState} from 'react'
 import {StoreContext} from '../App.jsx'
 import Header from '../Header/Header.jsx'
