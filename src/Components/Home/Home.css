@@ -33,7 +33,7 @@
 
 .home-text-block {
     flex:2;
-    min-width:240px;
+    min-width:375px;
     height:400px;
     background-color:white;
     display:flex;
@@ -53,14 +53,15 @@
     min-width:300px;
     display:flex;
     flex-direction:column;
-    padding:50px;
+    padding:30px 50px 30px 50px;
     align-items:center;
     justify-content:center;
     height: min(300px, fit-content);
     background-color:#f9f9f9;
+    text-align:center;
 }
 
 .home-testimonial-block>p {
-    max-width:220px;
+    max-width:265px;
 }
 
