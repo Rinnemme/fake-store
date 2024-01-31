@@ -9,6 +9,7 @@ import TechImg from '../../assets/tech.png'
 import './Home.css'
 
 export default function Home() {
+    window.scrollTo(0, 0)
     return (
         <>
             <Header />

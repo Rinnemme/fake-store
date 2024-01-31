@@ -6,6 +6,7 @@ import Header from '../Header/Header.jsx'
 import './Store.css'
 
 function Store() {
+    window.scrollTo(0, 0)
     const context = useContext(StoreContext)
     const shopItems = context.shopItems
     const cartItems = context.cartItems

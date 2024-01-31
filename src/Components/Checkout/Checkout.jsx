@@ -7,6 +7,7 @@ import CloseImg from '../../assets/close.svg'
 import './checkout.css'
 
 export default function Checkout() {
+    window.scrollTo(0, 0)
     const context = useContext(StoreContext)
     const cartItems = context.cartItems
     let cartTotal = 0

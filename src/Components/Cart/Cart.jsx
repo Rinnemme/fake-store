@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom'
 import CloseImg from '../../assets/close.svg'
 
 export default function Cart() {
+    window.scrollTo(0, 0)
     const context = useContext(StoreContext)
     const cartItems = context.cartItems
     const updateCart = context.updateCart
