@@ -1,0 +1,66 @@
+
+
+#home-container {
+    display:flex;
+    flex-direction:column;
+    width:100%;
+}
+
+#store-banner>img {
+    width:min(600px, 80%);
+}
+
+#store-banner {
+    background-image: url('../../assets/shop-banner.png');
+    background-size:auto;
+    height:500px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.home-row {
+    display:flex;
+    flex-wrap:wrap;
+}
+
+.home-image-block {
+    flex:3;
+    min-width:360px;
+    height:400px;
+    background-size:cover;
+}
+
+.home-text-block {
+    flex:2;
+    min-width:240px;
+    height:400px;
+    background-color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    gap:10px;
+    padding:50px;
+}
+
+.home-text-block>h3 {
+    margin:0;
+}
+
+.home-testimonial-block {
+    flex:1;
+    min-width:300px;
+    display:flex;
+    flex-direction:column;
+    padding:50px;
+    align-items:center;
+    justify-content:center;
+    height: min(300px, fit-content);
+    background-color:#f9f9f9;
+}
+
+.home-testimonial-block>p {
+    max-width:220px;
+}
+
