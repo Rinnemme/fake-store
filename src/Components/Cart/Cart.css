@@ -1,42 +1,39 @@
 #cart-container {
-    display:flex;
-    width:100%;
     align-items:center;
+    display:flex;
     justify-content:center;
+    width:100%;
 }
 
 #cart-main {
-    margin-top:50px;
-    width:min(700px, 100vw);
-    min-width:350px;
+    background-color:#f7f7f7;
+    border-radius:4px;
     display:flex;
     flex-direction:column;
     margin-bottom:100px;
-    background-color:#f7f7f7;
-    border-radius:4px;
+    margin-top:50px;
+    min-width:350px;
+    width:min(700px, 100vw);
 }
 
 #cart-header {
+    align-items:center;
+    background-color:#86e8dc;
+    border-radius: 4px 4px 0 0;
+    color:#0f4f47;
     display:flex;
+    flex-direction:row;
+    font-size:1.1em;
     font-weight:bold;
     height:70px;
-    font-size:1.1em;
-    flex-direction:row;
     justify-content:space-between;
-    align-items:center;
     padding: 10px 30px 10px 30px;
-    border-radius: 4px 4px 0 0;
-    background-color:#86e8dc;
-    color:#0f4f47;
 }
 
-commit -m "style cart header & buttons to be a bit more colorful and use the same principle of color being a darker iteration of backgrou
-nd-color" 
-
 #cart-total {
+    align-items:center;
     display:flex;
     font-weight:400;
-    align-items:center;
 }
 
 #cart-total>*>button {
@@ -58,41 +55,41 @@ nd-color"
 }
 
 .cart-item-row {
+    align-items:center;
     display: flex;
     flex-direction:row;
     justify-content:space-between;
-    align-items:center;
-}
-
-.cart-item-info {
-    display:flex;
-    align-items:center;
-    gap: 50px;
 }
 
 .cart-item-image {
-    width:100px;
-    height:100px;
-    overflow:hidden;
-    background-size:cover;
     background-position:center;
+    background-size:cover;
     border-radius:4px;
     box-shadow: 0px 0px 3px 0px gray;
+    height:100px;
+    overflow:hidden;
+    width:100px;
+}
+
+.cart-item-info {
+    align-items:center;
+    display:flex;
+    gap: 50px;
 }
 
 .cart-item-quantity-section {
+    align-items:center;
     display:flex;
     flex-direction:row;
-    align-items:center;
     gap:15px;
 }
 
 .remove-from-cart-button {
-    border:0;
-    border-radius:50%;
-    width:18px;
-    height:18px;
-    background-size:cover;
     background-color:#FF7D95;
     background-position:center;
+    background-size:cover;
+    border:0;
+    border-radius:50%;
+    height:18px;
+    width:18px;
 }

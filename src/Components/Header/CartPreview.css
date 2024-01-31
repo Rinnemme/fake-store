@@ -1,54 +1,54 @@
 #cart-counter {
-    position:absolute;
-    right:50px;
-    top:8px;
     background-color:#FFD899;
+    border-radius:4px;
     color: #53370b;
     font-size:0.8em;
     padding:4px 6px 4px 6px;
-    border-radius:4px;
+    position:absolute;
+    right:50px;
+    top:8px;
 }
 
 #cart-preview-container {
-    position:absolute;
-    top:0;
-    right:0;
-    padding-left:40px;
     padding-bottom:40px;
+    padding-left:40px;
+    position:absolute;
+    right:0;
+    top:0;
 }
 
 #cart-preview {
-    position:relative;
-    margin-top:78px;
-    margin-right:18px;
+    border-radius:3px;
+    box-shadow:0px 0px 5px 0px gray;
     display:flex;
     flex-direction:column;
-    box-shadow:0px 0px 5px 0px gray;
-    border-radius:3px;
+    margin-right:18px;
+    margin-top:78px;
+    position:relative;
 }
 
 #mini-cart-banner {
-    text-align:center;
     background-color:#EFEFEF;
-    padding:10px;
     border-radius: 3px 3px 0px 0px;
+    padding:10px;
+    text-align:center;
 }
 
 #mini-cart {
-    padding:10px;
     background-color:white;
+    padding:10px;
 }
 
 .mini-cart-item {
+    align-items:center;
     display:flex;
     justify-content:space-between;
-    align-items:center;
     padding:5px;
 }
 
 .mini-cart-item>img {
-    width:35px; 
     padding-right:10px;
+    width:35px; 
 }
 
 .mini-cart-item-name {
@@ -62,11 +62,11 @@
 }
 
 #mini-cart-total {
-    display:flex;
-    justify-content:space-between;
     background-color: #EFEFEF;
-    padding:10px;
+    display:flex;
     font-weight:bold;
+    justify-content:space-between;
+    padding:10px;
 }
 
 #mini-cart-buttons {
@@ -74,22 +74,22 @@
 }
 
 #mini-cart-buttons>*>button {
-    padding:12px;
     border:none;
-    width:100%;
-    height:100%;
     color:#333333;
+    height:100%;
+    padding:12px;
+    width:100%;
 }
 
 #mini-cart-buttons>a {
-    width:50%;
     height:100%;
+    width:50%;
 }
 
 #left-mini-cart-button {
     background-color: #86e8dc;
-    color: #0f4f47;
     border-radius: 0 0 0 3px;
+    color: #0f4f47;
 }
 
 #left-mini-cart-button:hover {
@@ -99,8 +99,8 @@
 
 #right-mini-cart-button {
     background-color:#FFD899;
-    color: #53370b;
     border-radius: 0 0 3px 0;
+    color: #53370b;
 }
 
 #right-mini-cart-button:hover {

@@ -6,46 +6,38 @@
   cursor:default;
 }
 
-body {
-  background-color:white;
-  display:flex;
-  flex-direction:column;
-  margin: 0px;
-  padding: 0px;
-  min-height:100vh;
-  box-sizing:border-box;
-  font-family: sans-serif;
-  font-weight:200;
-  color:#333333;
-}
-
 #root {
   align-items:center;
+  box-sizing:border-box;
   display:flex;
   flex-direction:column;
   min-height:100vh;
   width:100vw;
+}
+
+body {
+  background-color:white;
   box-sizing:border-box;
-}
-
-button:hover, button>*:hover {
-  cursor:pointer;
-}
-
-button, button>* {
-  text-decoration:none;
-  color: #333333;
+  color:#333333;
+  display:flex;
+  flex-direction:column;
+  font-family: sans-serif;
+  font-weight:200;
+  margin: 0px;
+  min-height:100vh;
+  padding: 0px;
 }
 
 button {
   background-color: #86e8dc;
-  color: #0f4f47;
   border:none;
-  padding: 5px 10px 5px 10px;
   border-radius:4px;
+  color: #0f4f47;
+  padding: 5px 10px 5px 10px;
 }
 
 button:hover {
+  cursor:pointer;
   background-color:#FFD899;
   color: #53370b;
   transition:0.3s;
