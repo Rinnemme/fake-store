@@ -36,3 +36,17 @@ button, button>* {
   text-decoration:none;
   color: #333333;
 }
+
+button {
+  background-color: #86e8dc;
+  color: #0f4f47;
+  border:none;
+  padding: 5px 10px 5px 10px;
+  border-radius:4px;
+}
+
+button:hover {
+  background-color:#FFD899;
+  color: #53370b;
+  transition:0.3s;
+}
