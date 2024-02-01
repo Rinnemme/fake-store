@@ -65,9 +65,23 @@
 #cart-review-contents {
     display:flex;
     flex-direction:column;
-    gap:20px;
+    gap:45px;
     padding:30px;
     width:100%;
+}
+
+.image-and-name {
+    align-items:center;
+    display:flex;
+    justify-content:flex-start;
+}
+
+.quantity-and-price {
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    justify-content:flex-end;
+    margin-left:30px;
 }
 
 #submit-button-container {

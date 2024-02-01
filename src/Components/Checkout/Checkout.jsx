@@ -93,10 +93,14 @@ export default function Checkout() {
                             {cartItems.map(item => {
                                 return (
                                     <div key={item.id} className="cart-item-row">
-                                        <div className="cart-item-image" style={{backgroundImage:`url(${item.thumbnail})`}}/>
-                                        <div>{`${item.title}`}</div>
-                                        <div>{`Qty: ${item.quantity}`}</div>
-                                        <div>{`Subtotal: $${item.quantity*item.price}`}</div>
+                                        <div className="image-and-name">
+                                            <div className="cart-item-image" style={{backgroundImage:`url(${item.thumbnail})`}}/>
+                                            <div>{`${item.title}`}</div>
+                                        </div>
+                                        <div className="quantity-and-price">
+                                            <div>{`Qty: ${item.quantity}`}</div>
+                                            <div style={{marginLeft:`10px`}}>{`Subtotal: $${item.quantity*item.price}`}</div>
+                                        </div>
                                     </div>
                                 )
                             })}
