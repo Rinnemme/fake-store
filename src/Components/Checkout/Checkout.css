@@ -36,15 +36,18 @@
 .checkout-block>.form-section {
     display:flex;
     flex-direction:column;
-    gap:30px;
-    padding:50px;
+    padding:50px 50px 20px 50px;
 }
 
 .form-line {
+    column-gap:20px;
     display:flex;
     flex-wrap:wrap;
-    gap:10px;
     width:100%;
+}
+
+.input-pair {
+    margin-bottom:30px;
 }
 
 #cart-review-total {

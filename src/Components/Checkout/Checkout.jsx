@@ -40,26 +40,40 @@ export default function Checkout() {
                         <div className="checkout-header">Shipment Information</div>
                         <div className="form-section">
                             <div className="form-line">
-                                <label htmlFor="name">Full Name: </label>
-                                <input id="name" type="text"></input>
-                                <label htmlFor="country">Country: </label>
-                                <input id="country" type="text"></input>
+                                <div className="input-pair">
+                                    <label htmlFor="name">Full Name: </label>
+                                    <input id="name" type="text"></input>
+                                </div>
+                                <div className="input-pair">
+                                    <label htmlFor="country">Country: </label>
+                                    <input id="country" type="text"></input>
+                                </div>
                             </div>
                             <div className="form-line">
-                                <label htmlFor="address">Street Address: </label>
-                                <input id="address" style={{maxWidth: "300px"}} type="text"></input>
+                                <div className="input-pair">
+                                    <label htmlFor="address">Street Address: </label>
+                                    <input id="address" style={{maxWidth: "300px"}} type="text"></input>
+                                </div>
                             </div>
                             <div className="form-line">
-                                <label htmlFor="city">City: </label>
-                                <input id="city" type="text"></input>
-                                <label htmlFor="state">State: </label>
-                                <input id="state" style={{maxWidth: "50px"}} type="text"></input>
-                                <label htmlFor="zip">Zip: </label>
-                                <input id="zip" style={{maxWidth: "100px"}} type="text"></input>
+                                <div className="input-pair">
+                                    <label htmlFor="city">City: </label>
+                                    <input id="city" type="text"></input>
+                                </div>
+                                <div className="input-pair">
+                                    <label htmlFor="state">State: </label>
+                                    <input id="state" style={{maxWidth: "50px"}} type="text"></input>
+                                </div>
+                                <div className="input-pair">
+                                    <label htmlFor="zip">Zip: </label>
+                                    <input id="zip" style={{maxWidth: "100px"}} type="text"></input>
+                                </div>
                             </div>
                             <div className="form-line">
-                                <label htmlFor="phone">Phone Number: </label>
-                                <input id="phone" type="text"></input>
+                                <div className="input-pair">
+                                    <label htmlFor="phone">Phone Number: </label>
+                                    <input id="phone" type="text"></input>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -67,20 +81,30 @@ export default function Checkout() {
                         <div className="checkout-header">Payment Information</div>
                         <div className="form-section">
                             <div className="form-line">
-                                <label htmlFor="name-card">Name on card: </label>
-                                <input id="name-card" type="text"></input>
+                                <div className="input-pair">
+                                    <label htmlFor="name-card">Name on card: </label>
+                                    <input id="name-card" type="text"></input>
+                                </div>
                             </div>
                             <div className="form-line">
-                                <label htmlFor="card">Card Number: </label>
-                                <input id="card" style={{maxWidth: "300px"}} type="text"></input>
+                                <div className="input-pair">
+                                    <label htmlFor="card">Card Number: </label>
+                                    <input id="card" style={{maxWidth: "300px"}} type="text"></input>
+                                </div>
                             </div>
                             <div className="form-line">
-                                <label htmlFor="expiration">Expires: </label>
-                                <input id="expiration" type="text"></input>
-                                <label htmlFor="cvv">CVV: </label>
-                                <input id="cvv" style={{maxWidth: "50px"}} type="text"></input>
-                                <label htmlFor="zip-card">Zip: </label>
-                                <input id="zip-card" style={{maxWidth: "100px"}} type="text"></input>
+                                <div className="input-pair">
+                                    <label htmlFor="expiration">Expires: </label>
+                                    <input id="expiration" type="text"></input>
+                                </div>
+                                <div className="input-pair">
+                                    <label htmlFor="cvv">CVV: </label>
+                                    <input id="cvv" style={{maxWidth: "50px"}} type="text"></input>
+                                </div>
+                                <div className="input-pair">
+                                    <label htmlFor="zip-card">Zip: </label>
+                                    <input id="zip-card" style={{maxWidth: "100px"}} type="text"></input>
+                                </div>
                             </div>
                         </div>
                     </div>
