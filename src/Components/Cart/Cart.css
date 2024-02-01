@@ -26,7 +26,7 @@
     font-weight:bold;
     height:70px;
     justify-content:space-between;
-    padding: 10px 30px 10px 30px;
+    padding: 20px;
 }
 
 #cart-total {
@@ -38,7 +38,8 @@
 #cart-total>*>button {
     background-color:#FFD899;
     color:#53370b;
-    margin-left:10px;
+    margin-left:20px;
+    padding: 8px 12px 8px 12px;
 }
 
 #cart-total>*>button:hover {
@@ -50,7 +51,7 @@
     display:flex;
     flex-direction:column;
     gap:45px;
-    padding:30px;
+    padding:40px 30px 50px 30px;
 }
 
 .cart-item-row {
