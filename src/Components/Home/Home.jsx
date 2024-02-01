@@ -18,7 +18,7 @@ export default function Home() {
                 <div className="home-row">
                     <div className="home-image-block" style={{backgroundImage:`url(${TechImg})`}}></div>
                     <div className="home-text-block">
-                        <h3>We got stuff for evading ennui</h3>
+                        <h3>We got stuff for ennui</h3>
                         <p>You need one of a few specific cell phones or laptops? 
                             Ones that are a little bit outdated, but still perfectly
                              fine to use? Looking to flex on your friends with a kind 
@@ -31,7 +31,7 @@ export default function Home() {
                 </div>
                 <div className="home-row" style={{flexWrap:`wrap-reverse`}}>
                     <div className="home-text-block">
-                        <h3>We got stuff for your house</h3>
+                        <h3>We got house stuff</h3>
                         <p>Do you want one of five very specific groceries, beacuse 
                             you are ordinarily overwhelmed with choice and would 
                             simply rather have choices made for you, and poorly at 
