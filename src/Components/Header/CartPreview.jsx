@@ -30,7 +30,7 @@ export default function CartPreview() {
                         {cartItems.length===0 && <div><em>There are no items in your cart.</em></div>}
                         {cartItems.map(item=>{
                             return (
-                                <div className="mini-cart-item">
+                                <div key={item.id} className="mini-cart-item">
                                     <img src={item.thumbnail}/>
                                     <div className="mini-cart-item-name">{`${item.title} (${item.quantity})`}</div>
                                     <div className="mini-cart-item-total">{`$${item.price * item.quantity}`}</div>
