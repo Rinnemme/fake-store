@@ -1,11 +1,14 @@
 import {useContext, useState} from 'react'
 import {StoreContext} from '../App.jsx'
 import Header from '../Header/Header.jsx'
+import LeftArrow from '../../assets/left-arrow.svg'
+import RightArrow from '../../assets/right-arrow.svg'
 import './Store.css'
 
 function Store() {
     if(!window.location.href.includes('store')) window.scrollTo(0, 0)
     const[ShowModal, setShowModal] = useState(false)
+    const[ShowSidebar, setShowSidebar] = useState(true)
     const context = useContext(StoreContext)
     const shopItems = context.shopItems
     const cartItems = context.cartItems
@@ -58,14 +61,16 @@ function Store() {
                 </div>
             </>}
             <div id="store-container">
-                <div id="store-sidebar">
+                {!ShowSidebar && <img id="store-sidebar-open" src={RightArrow} onClick={() => setShowSidebar(true)}></img>}
+                {ShowSidebar && <div id="store-sidebar">
                     <div id="store-sidebar-content">
+                        <img id="store-sidebar-close" src={LeftArrow} onClick={() => setShowSidebar(false)}></img>
                         <h2>Categories</h2>
                         {categories.map(category => {
                             return (<h3 key={category}><a href={`#${category}`}>{`${capitalize(category)}`}</a></h3>)
                         })}
                     </div>
-                </div>
+                </div>}
                 <div id="store-main">
                     {categories.map(category => {
                         const categoryItems = []

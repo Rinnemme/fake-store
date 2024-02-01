@@ -1,23 +1,46 @@
 #store-container {
     display:flex;
     overflow:scroll;
-    position:relative;
     width:100%;
 }
 
 #store-sidebar {
     background-color:#f9f9f9;
     border-right: 1px solid lightgray;
-    flex:1;
-    left:0px;
-    min-width:210px;
-    padding:30px 60px 30px 30px;
-    position:sticky;
+    min-width:240px;
+    width:calc(100%/5);
     z-index:1;
 }
 
-#store-sidebar-content {
+#store-sidebar-close,
+#store-sidebar-open {
+    height:30px;
+    width:30px;
+}
+
+#store-sidebar-close:hover,
+#store-sidebar-open:hover {
+    cursor:pointer;
+}
+
+#store-sidebar-close {
+    position:absolute;
+    right:30px;
+    top:30px;
+}
+
+#store-sidebar-open {
+    left:20px;
     position:fixed;
+    top:80px;
+}
+
+#store-sidebar-content {
+    min-width:inherit;
+    padding:30px;
+    position:fixed;
+    top:60px;
+    width:inherit;
 }
 
 #store-sidebar-content>h2 {
