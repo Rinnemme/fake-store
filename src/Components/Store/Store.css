@@ -1,7 +1,8 @@
 #store-container {
     display:flex;
-    overflow:scroll;
-    width:100%;
+    overflow-x:hidden;
+    overflow-y:scroll;
+    width:100vw;
 }
 
 #store-sidebar {
@@ -9,7 +10,6 @@
     border-right: 1px solid lightgray;
     min-width:240px;
     width:calc(100%/5);
-    z-index:1;
 }
 
 #store-sidebar-close,
@@ -97,8 +97,9 @@
     border-radius: 5px;
     box-shadow:0px 0px 3px 0px gray;
     display:flex;
-    height:200px;
-    width:400px;
+    height:fit-content;
+    min-height:200px;
+    width:min(400px, 100%);
 }
 
 .store-item-card>.store-item-image {
@@ -132,7 +133,7 @@
 }
 
 .add-to-cart-section>* {
-    height:25px;
+    height:min(25px, fit-content);
 }
 
 .add-to-cart-section>div {
