@@ -29,6 +29,21 @@ export default function Home() {
                         <Link to='/store'><button>Shop now!</button></Link>
                     </div>
                 </div>
+                <div className="home-row" style={{flexWrap:`wrap-reverse`}}>
+                    <div className="home-text-block">
+                        <h3>We got stuff for your house</h3>
+                        <p>Do you want one of five very specific groceries, beacuse 
+                            you are ordinarily overwhelmed with choice and would 
+                            simply rather have choices made for you, and poorly at 
+                            that? Maybe a bizarre selection of knick knacks to put... 
+                            I don't know, on that barren coffee table or something? 
+                            You guessed it: we got you. 
+                        </p>
+                        <Link to='/store'><button>Shop now!</button></Link>
+                    </div>
+                    <div className="home-image-block" style={{backgroundImage:`url(${HomeImg})`}}></div>
+                </div>
+                <div className="spacer"></div>
                 <div className="home-row">
                     <div className="home-testimonial-block">
                         <p>"When I arrived at this very real storefront, I was 
@@ -48,20 +63,7 @@ export default function Home() {
                         history is a colossal understatement."</p>
                         <p>- Rea L'Dame</p>
                     </div>
-                </div>
-                <div className="home-row">
-                    <div className="home-text-block">
-                        <h3>We got stuff for your house</h3>
-                        <p>Do you want one of five very specific groceries, beacuse 
-                            you are ordinarily overwhelmed with choice and would 
-                            simply rather have choices made for you, and poorly at 
-                            that? Maybe a bizarre selection of knick knacks to put... 
-                            I don't know, on that barren coffee table or something? 
-                            You guessed it: we got you. 
-                        </p>
-                        <Link to='/store'><button>Shop now!</button></Link>
-                    </div>
-                    <div className="home-image-block" style={{backgroundImage:`url(${HomeImg})`}}></div>
+                    <div className="spacer"></div>
                 </div>
                 <div className="home-row">
                     <div className="home-image-block" style={{backgroundImage:`url(${BeautyImg})`}}></div>
