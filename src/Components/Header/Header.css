@@ -15,7 +15,7 @@
 
 #store-header>img,
 #logo {
-    height:45%;
+    height:min(45%, 8vw);
     z-index:2;
 }
 
@@ -25,5 +25,5 @@
 }
 
 #store-header>*>#logo {
-    height:40px;
+    width:min(50vw, 225px);
 }
