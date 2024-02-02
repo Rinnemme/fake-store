@@ -41,19 +41,15 @@ function Store() {
         document.getElementById(`${item.id}-add`).textContent='Added!'
         setTimeout(function(){
             document.getElementById(`cart-counter`).style.backgroundColor='#ffdca4'
-            document.getElementById(`cart-counter`).style.transition='0.5s all'
-        }, 400)
-        setTimeout(function(){
-            document.getElementById(`cart-counter`).style.backgroundColor='#ffdca4'
             document.getElementById(`cart-counter`).style.color='#53370b'
-            document.getElementById(`cart-counter`).style.transition='0.5s all'
+            document.getElementById(`cart-counter`).style.transition='0.8s all'
             document.getElementById(`${item.id}-add`).style.backgroundColor='#86e8dc'
             document.getElementById(`${item.id}-add`).style.color='#0f4f47'
             document.getElementById(`${item.id}-add`).disabled=false
             document.getElementById(`${item.id}-add`).style.width = `auto`
             document.getElementById(`${item.id}-add`).textContent='Add to Cart'
-            document.getElementById(`${item.id}-add`).style.transition='0.5s all'
-        }, 1000)
+            document.getElementById(`${item.id}-add`).style.transition='0.8s all'
+        }, 700)
     }
 
     function addToCart(item) {
