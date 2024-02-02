@@ -30,10 +30,37 @@ function Store() {
         return string.slice(0,1).toUpperCase()+string.slice(1)
     }
 
+    function showAddedToCart(item) {
+        const buttonWidth = document.getElementById(`${item.id}-add`).offsetWidth
+        document.getElementById(`cart-counter`).style.backgroundColor='#86e8dc'
+        document.getElementById(`cart-counter`).style.color='#0f4f47'
+        document.getElementById(`${item.id}-add`).disabled=true
+        document.getElementById(`${item.id}-add`).style.backgroundColor='#ffdca4'
+        document.getElementById(`${item.id}-add`).style.color='#53370b'
+        document.getElementById(`${item.id}-add`).style.width = `${buttonWidth}px`
+        document.getElementById(`${item.id}-add`).textContent='Added!'
+        setTimeout(function(){
+            document.getElementById(`cart-counter`).style.backgroundColor='#ffdca4'
+            document.getElementById(`cart-counter`).style.transition='0.5s all'
+        }, 400)
+        setTimeout(function(){
+            document.getElementById(`cart-counter`).style.backgroundColor='#ffdca4'
+            document.getElementById(`cart-counter`).style.color='#53370b'
+            document.getElementById(`cart-counter`).style.transition='0.5s all'
+            document.getElementById(`${item.id}-add`).style.backgroundColor='#86e8dc'
+            document.getElementById(`${item.id}-add`).style.color='#0f4f47'
+            document.getElementById(`${item.id}-add`).disabled=false
+            document.getElementById(`${item.id}-add`).style.width = `auto`
+            document.getElementById(`${item.id}-add`).textContent='Add to Cart'
+            document.getElementById(`${item.id}-add`).style.transition='0.5s all'
+        }, 1000)
+    }
+
     function addToCart(item) {
         item.quantity = document.getElementById(`${item.title}-input`).value
         if (!cartItems.find(match=>match.title===item.title)) {
             updateCart([...cartItems, {...item}])
+            showAddedToCart(item)
         }
         else {
             const newCart = []
@@ -44,6 +71,7 @@ function Store() {
             } else {
                 itemInCart.quantity = +itemInCart.quantity + +item.quantity
                 updateCart(newCart)
+                showAddedToCart(item)
             }
         }
     }
@@ -89,7 +117,7 @@ function Store() {
                                                     <div className="add-to-cart-section">
                                                         <div>Quantity:</div>
                                                         <input id={`${item.title}-input`} type="number" max="5" min="1" defaultValue="1"></input>
-                                                        <button onClick={() => addToCart(item)}>Add to Cart</button>
+                                                        <button id={`${item.id}-add`} onClick={() => addToCart(item)}>Add to Cart</button>
                                                     </div>
                                                 </div>
                                             </div>
