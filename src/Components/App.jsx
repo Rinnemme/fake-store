@@ -8,6 +8,7 @@ const StoreContext = createContext({
   shopItems: [],
   updateCart: () => {},
   removeFromCart: () => {},
+  updateQuantity: () => {},
 })
 
 const loadedCart = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : defaultCart
@@ -29,6 +30,14 @@ function App() {
     cartItems.forEach(item => newCart.push({...item}))
     const itemIndex = newCart.indexOf(newCart.find(match=>match.title===item.title))
     newCart.splice(itemIndex,1)
+    updateCart(newCart)
+  }
+
+  function updateQuantity(item, value) {
+    const newCart = []
+    cartItems.forEach(item => newCart.push({...item}))
+    const itemInCart = newCart.find(match=>match.title===item.title)
+    itemInCart.quantity = value
     updateCart(newCart)
   }
 
@@ -73,6 +82,7 @@ function App() {
         shopItems: shopItems,
         updateCart: updateCart,
         removeFromCart: removeFromCart,
+        updateQuantity: updateQuantity,
       }}>
         <Router />
       </StoreContext.Provider>}
