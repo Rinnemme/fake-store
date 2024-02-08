@@ -7,6 +7,8 @@ export default function CartPreview() {
     const [CartVisible, setCartVisible] = useState(false)
     const context = useContext(StoreContext)
     const cartItems = context.cartItems
+    const updateQuantity = context.updateQuantity
+    const removeFromCart = context.removeFromCart
     
     let cartTotal = 0
     cartItems.forEach(item => cartTotal = cartTotal+(item.price * item.quantity))
@@ -32,8 +34,17 @@ export default function CartPreview() {
                             return (
                                 <div key={item.id} className="mini-cart-item">
                                     <img src={item.thumbnail}/>
-                                    <div className="mini-cart-item-name">{`${item.title} (${item.quantity})`}</div>
+                                    <div className="mini-cart-item-name">{`${item.title}`}</div>
+                                    <div>{'Qty:'}</div>
+                                    <input 
+                                        type="number"
+                                        max="5" 
+                                        min="1" 
+                                        value={item.quantity}
+                                        onChange={(e) => {updateQuantity(item, e.target.value)}}
+                                    ></input>
                                     <div className="mini-cart-item-total">{`$${item.price * item.quantity}`}</div>
+                                    <button className="remove-from-cart-button" onClick={() => removeFromCart(item)}></button>
                                 </div>
                             )
                         })}
