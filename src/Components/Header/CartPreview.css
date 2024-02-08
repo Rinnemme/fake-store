@@ -62,14 +62,15 @@
 
 .mini-cart-item-name {
     text-align:left;
+    padding-right:12px;
     width:100%;
 }
 
 .mini-cart-item-total {
     justify-self: flex-end;
-    margin-left:10px;
-    margin-right:5px;
-    width:110px;
+    margin-left:12px;
+    padding-right:12px;
+    width:122px;
 }
 
 #mini-cart-total {
