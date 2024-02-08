@@ -2,12 +2,8 @@ import { useState } from "react"
 import LeftArrow from '../../assets/left-arrow.svg'
 import RightArrow from '../../assets/right-arrow.svg'
 
-export default function Sidebar({categories}) {
+export default function Sidebar({categories, capitalize}) {
     const[showSidebar, setShowSidebar] = useState(true)
-
-    function capitalize(string) {
-        return string.slice(0,1).toUpperCase()+string.slice(1)
-    }
 
     return (
         <>

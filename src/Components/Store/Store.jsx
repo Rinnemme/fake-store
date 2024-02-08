@@ -1,15 +1,14 @@
 import {useContext, useState} from 'react'
 import {StoreContext} from '../App.jsx'
 import Header from '../Header/Header.jsx'
-// import LeftArrow from '../../assets/left-arrow.svg'
-// import RightArrow from '../../assets/right-arrow.svg'
 import Card from './Card.jsx'
 import Sidebar from './Sidebar.jsx'
 import './Store.css'
+import './Card.css'
+import './Sidebar.css'
 
 function Store() {
     if(!window.location.href.includes('store')) window.scrollTo(0, 0)
-    // const[ShowSidebar, setShowSidebar] = useState(true)
     const context = useContext(StoreContext)
     const shopItems = context.shopItems
 
@@ -28,17 +27,7 @@ function Store() {
         <>
             <Header />
             <div id="store-container">
-                {/* {!ShowSidebar && <img id="store-sidebar-open" src={RightArrow} onClick={() => setShowSidebar(true)}></img>}
-                {ShowSidebar && <div id="store-sidebar">
-                    <div id="store-sidebar-content">
-                        <img id="store-sidebar-close" src={LeftArrow} onClick={() => setShowSidebar(false)}></img>
-                        <h2>Categories</h2>
-                        {categories.map(category => {
-                            return (<h3 key={category}><a href={`#${category}`}>{`${capitalize(category)}`}</a></h3>)
-                        })}
-                    </div>
-                </div>} */}
-                <Sidebar categories={categories}/>
+                <Sidebar categories={categories} capitalize={capitalize}/>
                 <div id="store-main">
                     {categories.map(category => {
                         const categoryItems = []
