@@ -9,6 +9,7 @@ export default function Cart() {
     const context = useContext(StoreContext)
     const cartItems = context.cartItems
     const updateCart = context.updateCart
+    const removeFromCart = context.removeFromCart
     let cartTotal = 0
     cartItems.forEach(item => cartTotal+=(item.price * item.quantity))
 
@@ -17,14 +18,6 @@ export default function Cart() {
         cartItems.forEach(item => newCart.push({...item}))
         const itemInCart = newCart.find(match=>match.title===item.title)
         itemInCart.quantity = value
-        updateCart(newCart)
-    }
-
-    function removeFromCart(item) {
-        const newCart = []
-        cartItems.forEach(item => newCart.push({...item}))
-        const itemIndex = newCart.indexOf(newCart.find(match=>match.title===item.title))
-        newCart.splice(itemIndex,1)
         updateCart(newCart)
     }
 
