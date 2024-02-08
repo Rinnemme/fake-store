@@ -32,12 +32,14 @@ function Store() {
 
     function showAddedToCart(item) {
         const buttonWidth = document.getElementById(`${item.id}-add`).offsetWidth
+        const buttonHeight = document.getElementById(`${item.id}-add`).offsetHeight
         document.getElementById(`cart-counter`).style.backgroundColor='#86e8dc'
         document.getElementById(`cart-counter`).style.color='#0f4f47'
         document.getElementById(`${item.id}-add`).disabled=true
         document.getElementById(`${item.id}-add`).style.backgroundColor='#ffdca4'
         document.getElementById(`${item.id}-add`).style.color='#53370b'
         document.getElementById(`${item.id}-add`).style.width = `${buttonWidth}px`
+        document.getElementById(`${item.id}-add`).style.height = `${buttonHeight}px`
         document.getElementById(`${item.id}-add`).textContent='Added!'
         setTimeout(function(){
             document.getElementById(`cart-counter`).style.backgroundColor='#ffdca4'
@@ -47,6 +49,7 @@ function Store() {
             document.getElementById(`${item.id}-add`).style.color='#0f4f47'
             document.getElementById(`${item.id}-add`).disabled=false
             document.getElementById(`${item.id}-add`).style.width = `auto`
+            document.getElementById(`${item.id}-add`).style.height = `auto`
             document.getElementById(`${item.id}-add`).textContent='Add to Cart'
             document.getElementById(`${item.id}-add`).style.transition='0.8s all'
         }, 700)
