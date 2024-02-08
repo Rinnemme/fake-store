@@ -8,18 +8,10 @@ export default function Cart() {
     if(!window.location.href.includes('cart')) window.scrollTo(0, 0)
     const context = useContext(StoreContext)
     const cartItems = context.cartItems
-    const updateCart = context.updateCart
+    const updateQuantity = context.updateQuantity
     const removeFromCart = context.removeFromCart
     let cartTotal = 0
     cartItems.forEach(item => cartTotal+=(item.price * item.quantity))
-
-    function updateQuantity(item, value) {
-        const newCart = []
-        cartItems.forEach(item => newCart.push({...item}))
-        const itemInCart = newCart.find(match=>match.title===item.title)
-        itemInCart.quantity = value
-        updateCart(newCart)
-    }
 
     return (
         <>
@@ -47,11 +39,10 @@ export default function Cart() {
                                         <div className="cart-item-quantity-section">
                                             <div>Qty:</div>
                                             <input 
-                                                id={`${item.title}-cart-quantity`} 
                                                 type="number" 
                                                 max="5" 
                                                 min="1" 
-                                                defaultValue={item.quantity}
+                                                value={item.quantity}
                                                 onChange={(e) => {updateQuantity(item, e.target.value)}}
                                             ></input>
                                             <button className="remove-from-cart-button" onClick={() => removeFromCart(item)}></button>
