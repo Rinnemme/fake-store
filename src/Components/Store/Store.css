@@ -1,6 +1,6 @@
 #store-container {
     display:flex;
-    overflow-x:hidden;
+    overflow-x:scroll;
     overflow-y:scroll;
     width:100vw;
 }
@@ -8,7 +8,9 @@
 #store-sidebar {
     background-color:#f9f9f9;
     border-right: 1px solid lightgray;
+    left:0;
     min-width:240px;
+    position:sticky;
     width:calc(100%/5);
 }
 
@@ -61,7 +63,7 @@
 #store-main {
     align-items:center;
     display:flex;
-    flex:6;
+    flex:1;
     flex-direction:column;
     justify-content:center;
 }
