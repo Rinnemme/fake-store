@@ -7,20 +7,29 @@ const StoreContext = createContext({
   cartItems: [],
   shopItems: [],
   updateCart: () => {},
+  removeFromCart: () => {},
 })
 
 const loadedCart = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : defaultCart
 
 function App() {
-  const [CartItems, setCartItems] = useState(loadedCart)
-  const [ShopItems, setShopItems] = useState([])
-  const [FetchFailed, setFetchFailed] = useState(false)
-  const [ErrorMessage, setErrorMessage] = useState('')
-  const [Loading, setLoading] = useState(true)
+  const [cartItems, setCartItems] = useState(loadedCart)
+  const [shopItems, setShopItems] = useState([])
+  const [fetchFailed, setFetchFailed] = useState(false)
+  const [errorMessage, setErrorMessage] = useState('')
+  const [loading, setLoading] = useState(true)
  
   function updateCart(cart) {
     setCartItems(cart)
     localStorage.setItem('cart', JSON.stringify(cart))
+  }
+
+  function removeFromCart(item) {
+    const newCart = []
+    cartItems.forEach(item => newCart.push({...item}))
+    const itemIndex = newCart.indexOf(newCart.find(match=>match.title===item.title))
+    newCart.splice(itemIndex,1)
+    updateCart(newCart)
   }
 
   async function fetchItems() {
@@ -42,27 +51,28 @@ function App() {
 
   return (
     <>
-      {FetchFailed &&  <>
+      {fetchFailed &&  <>
             <div id="modal">
                 <div id="modal-message">
                     <p>{`Looks like we failed to get the data necessary here!`}</p>
-                    <p>{`(${ErrorMessage})`}</p>
+                    <p>{`(${errorMessage})`}</p>
                     <button onClick={() => location.reload()}>Refresh</button>
                 </div>
             </div>
       </>}
-      {!FetchFailed && Loading && <>
+      {!fetchFailed && loading && <>
             <div id="modal">
                 <div id="modal-message">
                     <p>{`Loading...`}</p>
                 </div>
             </div>
       </>}
-      {!FetchFailed && !Loading &&
+      {!fetchFailed && !loading &&
       <StoreContext.Provider value = {{
-        cartItems: CartItems,
-        shopItems: ShopItems,
+        cartItems: cartItems,
+        shopItems: shopItems,
         updateCart: updateCart,
+        removeFromCart: removeFromCart,
       }}>
         <Router />
       </StoreContext.Provider>}
