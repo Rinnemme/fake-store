@@ -2,7 +2,6 @@ import Header from '../Header/Header.jsx'
 import { useContext } from 'react'
 import { StoreContext } from '../App.jsx'
 import { Link } from 'react-router-dom'
-import CloseImg from '../../assets/close.svg'
 import './Cart.css'
 
 export default function Cart() {
@@ -56,7 +55,7 @@ export default function Cart() {
                                             <div>Qty:</div>
                                             <input id={`${item.title}-cart-quantity`} type="number" max="5" min="1" defaultValue={item.quantity}></input>
                                             <button onClick={() => updateQuantity(item)}>Update</button>
-                                            <button className="remove-from-cart-button" style={{backgroundImage:`url(${CloseImg})`}} onClick={() => removeFromCart(item)}></button>
+                                            <button className="remove-from-cart-button" onClick={() => removeFromCart(item)}></button>
                                         </div>
                                     </div>
                                 </div>
