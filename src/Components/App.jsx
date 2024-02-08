@@ -72,8 +72,3 @@ function App() {
 
 export default App
 export {StoreContext}
-
-// Do the fetch
-// Create & Provide the context
-// Render the header (with passed context)
-// Render the Router
