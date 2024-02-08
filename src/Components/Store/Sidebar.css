@@ -1,0 +1,54 @@
+#store-sidebar {
+    background-color:#f9f9f9;
+    border-right: 1px solid lightgray;
+    left:0;
+    min-width:240px;
+    position:sticky;
+    width:calc(100%/5);
+}
+
+#store-sidebar-close,
+#store-sidebar-open {
+    height:30px;
+    width:30px;
+}
+
+#store-sidebar-close:hover,
+#store-sidebar-open:hover {
+    cursor:pointer;
+}
+
+#store-sidebar-close {
+    position:absolute;
+    right:30px;
+    top:30px;
+}
+
+#store-sidebar-open {
+    left:20px;
+    position:fixed;
+    top:80px;
+}
+
+#store-sidebar-content {
+    min-width:inherit;
+    padding:30px;
+    position:fixed;
+    top:60px;
+    width:inherit;
+}
+
+#store-sidebar-content>h2 {
+    margin:0;
+}
+
+#store-sidebar-content>h3>a {
+    color:#333333;
+    font-weight:400;
+    text-decoration:none;
+}
+
+#store-sidebar-content>h3>a:hover {
+    color:#F6CA83;
+    cursor:pointer;
+}
