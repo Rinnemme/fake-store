@@ -43,13 +43,23 @@ button:hover {
   transition:0.3s;
 }
 
+input {
+  color:#333333;
+}
+
+input:focus {
+  outline:none;
+}
+
 #modal {
   align-items:center;
   background-color: rgba(255, 255, 255, 0.695);
   display:flex;
   height:100vh;
   justify-content:center;
+  left:0;
   position:fixed;
+  top:0;
   width:100vw;
   z-index:3;
 }

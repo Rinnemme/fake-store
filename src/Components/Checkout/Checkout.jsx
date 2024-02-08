@@ -7,17 +7,17 @@ import './Checkout.css'
 export default function Checkout() {
     if(!window.location.href.includes('checkout')) window.scrollTo(0, 0)
 
-    const [ShowModal, setShowModal] = useState(false)
+    const [showModal, setShowModal] = useState(false)
     const context = useContext(StoreContext)
     const cartItems = context.cartItems
 
     function toggleModal() {
-        const newstate = ShowModal === false ? true : false
-        setShowModal(newstate)
+        setShowModal(!showModal)
     }
 
     let cartTotal = 0
     cartItems.forEach(item => cartTotal+=(item.price * item.quantity))
+    
     const submitPayment = (e) => {
         e.preventDefault();
         toggleModal();
@@ -26,7 +26,7 @@ export default function Checkout() {
     return (
         <>
             <Header />
-            {ShowModal && <>
+            {showModal && <>
                 <div id="modal">
                     <div id="modal-message">
                         <p>Sike, this isn't a real payment form!</p>

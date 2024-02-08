@@ -56,6 +56,10 @@
     width:35px; 
 }
 
+.mini-cart-item>input {
+    margin-left:10px;
+}
+
 .mini-cart-item-name {
     text-align:left;
     width:100%;
@@ -63,7 +67,9 @@
 
 .mini-cart-item-total {
     justify-self: flex-end;
-    padding-left:30px;
+    margin-left:10px;
+    margin-right:5px;
+    width:110px;
 }
 
 #mini-cart-total {
