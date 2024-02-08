@@ -4,7 +4,7 @@ import { StoreContext } from '../App.jsx'
 import { Link } from 'react-router-dom'
 
 export default function CartPreview() {
-    const [CartVisible, setCartVisible] = useState(false)
+    const [cartVisible, setCartVisible] = useState(false)
     const context = useContext(StoreContext)
     const cartItems = context.cartItems
     const updateQuantity = context.updateQuantity
@@ -17,15 +17,14 @@ export default function CartPreview() {
     cartItems.forEach(item => cartLength = cartLength + +item.quantity)
 
     function toggleCartVisibility() {
-        if (CartVisible === false) setCartVisible(true)
-        else setCartVisible(false)
+        setCartVisible(!cartVisible)
     }
 
     return (
         <>
             <img src={CartLogo} onClick={() => toggleCartVisibility()}/>
             {cartItems.length>0 && <div id="cart-counter">{`${cartLength}`}</div>}
-            {CartVisible && <div id="cart-preview-container" onMouseLeave={() => setCartVisible(false)}>
+            {cartVisible && <div id="cart-preview-container" onMouseLeave={() => setCartVisible(false)}>
                 <div id="cart-preview">
                     <div id="mini-cart-banner">In Your Cart:</div>
                     <div id="mini-cart">
